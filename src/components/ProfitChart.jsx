@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from 'chart.js';
 
 ChartJS.register(
@@ -19,7 +20,8 @@ ChartJS.register(
   PointElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 const ProfitChart = () => {
@@ -41,6 +43,9 @@ const ProfitChart = () => {
     plugins: {
       legend: {
         position: 'top',
+      },
+      filler: {
+        propagate: true, 
       },
       title: {
         display: true,
