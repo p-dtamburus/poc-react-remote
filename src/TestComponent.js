@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import ProfitChart from "./components/ProfitChart";
 import "./App.css";
 
@@ -9,10 +9,8 @@ class TestComponent extends React.Component {
   render() {
     return (
       <>
-        <div class="react-container">
+        <div className="react-container">
           <h6>React Remote App</h6>
-          {/* <Button /> */}
-
           <ProfitChart />
         </div>
       </>
@@ -24,7 +22,8 @@ export default TestComponent;
 
 class TestComponentElement extends HTMLElement {
   connectedCallback() {
-    ReactDOM.render(<TestComponent />, this);
+    const root = createRoot(this);
+    root.render(<TestComponent />);
   }
 }
 
