@@ -1,6 +1,4 @@
-[[plugins]]
-  package = "react"
-  package = "react-dom"
+
 
 [build]
   command = "npm run build"
