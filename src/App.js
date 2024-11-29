@@ -1,11 +1,10 @@
 import "./App.css";
+import TestComponent from "./TestComponent";
 
 function App() {
   return (
     <>
-      <div class="react-container">
-        <h6>React Remote App</h6>
-      </div>
+      <TestComponent/>
     </>
   );
 }
