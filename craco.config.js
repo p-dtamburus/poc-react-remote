@@ -16,7 +16,7 @@ module.exports = {
                     filename: "remoteEntry.js",
                     exposes: {
                         "./reactRemoteApp": "./src/bootstrap", // app
-                        "./TestComponent": '/src/TestComponent', // component
+                        "./WebComponent": '/src/WebComponent', // component
                     },
                     shared:{
                         ...deps,
