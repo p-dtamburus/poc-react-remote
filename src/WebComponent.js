@@ -5,7 +5,7 @@ import '@sendbird/uikit-react/dist/index.css';
 
 import ProfitChart from "./components/ProfitChart";
 import "./App.css";
-import SendBirdWrapper from "./SendBirdWrapper";
+import SendBirdWrapper from "./components/SendBirdWrapper";
 
 class WebComponent extends React.Component {
   render() {

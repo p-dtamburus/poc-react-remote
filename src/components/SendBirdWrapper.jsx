@@ -4,6 +4,15 @@ import '@sendbird/uikit-react/dist/index.css';
 
 
 const SendBirdWrapper = () => {
+
+  const colorSet = {
+    '--sendbird-light-primary-500': '#066858',
+    '--sendbird-light-primary-400': '#027d69',
+    '--sendbird-light-primary-300': '#259c72',
+    '--sendbird-light-primary-200': '#69c085',
+    '--sendbird-light-primary-100': '#a8e2ab',
+}
+
   
   const appId = '546ABAB3-6E78-4A6A-A13E-69AA3EE8BC72';
 
@@ -20,6 +29,7 @@ const SendBirdWrapper = () => {
         appId={appId}
         userId={userId}
         accessToken={accessToken} 
+        colorSet={colorSet}
       />
     </div>
     </>
