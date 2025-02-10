@@ -14,12 +14,12 @@ const SendBirdWrapper = () => {
 }
 
   
-  const appId = '546ABAB3-6E78-4A6A-A13E-69AA3EE8BC72';
+  const appId = 'F00975C4-E1E4-491A-A30C-DE3E1AD77064';
 
-  const userId = 'sendbird_desk_agent_id_ba1494bf-54b1-491f-b0d0-04efe1e22c41';
+  const userId = 'sendbird_desk_agent_id_b38963f0-0239-4e67-a663-ea36a407704e';
   // const userId = 'sendbird_desk_agent_id_be1d06c9-f95f-453d-b3fe-c057ccf48a77';
 
-  const accessToken = '2da6130d3d4094014ff0ac83b030d28a7120d791';
+  const accessToken = '9fa7a81c91ed9bdc5e4b7186eb5a9f839a1101f2';
   // const accessToken = 'd2d998a3c1c54aba1e1d8b4dc41bd87b943a0b66';
 
   return (
