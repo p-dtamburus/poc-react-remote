@@ -20,7 +20,7 @@ const createUserIfNotExists = async (userId, nickname) => {
 
   const userPayload = {
     "user_id": "sendbird_desk_agent_id_de546c31-29b2-4056-b5cb-269e6fceb269",
-    "nickname": "Dan",
+    "nickname": "Dant",
     "profile_url": "https://sendbird.com/main/img/profiles/profile_05_512px.png",
     "issue_access_token": true,
     "session_token_expires_at": 1542945056625,

@@ -14,6 +14,8 @@ const SendBirdWrapper = () => {
   const appId = 'F00975C4-E1E4-491A-A30C-DE3E1AD77064';
 
   const createUserIfNotExists = async (userId, nickname) => {
+    console.log('nickname');
+    console.log(nickname);
     const apiUrl = `https://api-${appId}.sendbird.com/v3/users`;
     const headers = {
       'Content-Type': 'application/json',
@@ -57,8 +59,16 @@ const SendBirdWrapper = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
+
+    console.log('react');
+    console.log(localStorage.getItem('chat-usr-id'))
+    console.log(localStorage.getItem('chat-usr-name'))
+
+    let usrId = localStorage.getItem('chat-usr-id');
+    let usrNickName = localStorage.getItem('chat-usr-name');
+
     const fetchUser = async () => {
-      const user = await createUserIfNotExists('sendbird_desk_agent_id_b38963f0-0239-4e67-a663-ea36a407704e', 'Dan');
+      const user = await createUserIfNotExists(usrId, usrNickName);
       if (user) {
         setUserData(user);
       }
@@ -71,7 +81,7 @@ const SendBirdWrapper = () => {
   }
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div style={{ width: '100%', height: '78vh', margin: '21px 0px 0px 0px' }}>
       <SendbirdApp
         appId={appId}
         userId={userData.user_id}
