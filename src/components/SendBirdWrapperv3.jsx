@@ -19,7 +19,7 @@ const createUserIfNotExists = async (userId, nickname) => {
   // };
 
   const userPayload = {
-    "user_id": "sendbird_desk_agent_id_de546c31-29b2-4056-b5cb-269e6fceb269",
+    "user_id": "1061",
     "nickname": "Dan",
     "profile_url": "https://sendbird.com/main/img/profiles/profile_05_512px.png",
     "issue_access_token": true,
@@ -45,12 +45,14 @@ const createUserIfNotExists = async (userId, nickname) => {
     });
     return await userResponse.json();
   } else {
-    throw new Error('Failed to create or fetch user');
+    console.log('Failed to create or fetch user');
   }
 };
 
 const SendBirdWrapper = () => {
   const [user, setUser] = useState(null);
+  const [hasInitialized, setHasInitialized] = useState(false);
+
 
   const colorSet = {
     '--sendbird-light-primary-500': '#066858',
@@ -60,14 +62,43 @@ const SendBirdWrapper = () => {
     '--sendbird-light-primary-100': '#a8e2ab',
   };
 
+
   useEffect(() => {
+
+    if(hasInitialized) return;
+
     const initializeUser = async () => {
       const userId = 'dynamic_user_id'; // Replace with your dynamic user ID logic
       const nickname = 'dynamic_nickname'; // Replace with your dynamic nickname logic
 
       try {
+        console.log('teste');
         const user = await createUserIfNotExists(userId, nickname);
         setUser(user);
+        setHasInitialized(true);
+        console.log('createUserIfNotExists sucesso')
+        console.log(user)
+        //GET https://api-{application_id}.sendbird.com/v3/users/{user_id}
+
+        if (!user) {
+          return <div>Loading...</div>;
+        } 
+        else {
+          return (
+            <>
+              <div style={{ width: '100vw', height: '100vh' }}>
+                <SendbirdProvider appId="F00975C4-E1E4-491A-A30C-DE3E1AD77064" userId={user.user_id} accessToken={user.access_token} colorSet={colorSet}>
+                  <SendbirdApp />
+                </SendbirdProvider>
+              </div>
+            </>
+          );  
+        }
+
+
+
+
+        
       } catch (error) {
         console.error('Error initializing user:', error);
       }
@@ -78,15 +109,15 @@ const SendBirdWrapper = () => {
 
   if (!user) return <div>Loading...</div>;
 
-  return (
-    <>
-      <div style={{ width: '100vw', height: '100vh' }}>
-        <SendbirdProvider appId="F00975C4-E1E4-491A-A30C-DE3E1AD77064" userId={user.user_id} accessToken={user.access_token} colorSet={colorSet}>
-          <SendbirdApp />
-        </SendbirdProvider>
-      </div>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div style={{ width: '100vw', height: '100vh' }}>
+  //       <SendbirdProvider appId="F00975C4-E1E4-491A-A30C-DE3E1AD77064" userId={user.user_id} accessToken={user.access_token} colorSet={colorSet}>
+  //         <SendbirdApp />
+  //       </SendbirdProvider>
+  //     </div>
+  //   </>
+  // );
 };
 
 export default SendBirdWrapper;
