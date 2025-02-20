@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const mount = (el) => {
     createRoot(el).render(
-        <React.StrictMode>
+        // <React.StrictMode>
             <App />
-        </React.StrictMode>
+        // </React.StrictMode>
     );
 };
 
