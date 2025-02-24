@@ -1,0 +1,19 @@
+/* .sendbird-theme--light .sendbird-text-message-item-body.incoming {
+    background-color: red;
+} 
+
+ .sendbird-custom-channel-list .sendbird-channel-header__title__right__user-id {
+    display: none;
+} */
+
+.sendbird-channel-list {
+    width: 100%;
+}
+
+.sendbird-channel-header {
+    width: unset;
+}
+.sendbird-channel-preview {
+    width: unset;
+
+}

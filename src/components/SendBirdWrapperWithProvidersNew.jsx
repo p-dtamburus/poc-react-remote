@@ -1,5 +1,5 @@
 import "@sendbird/uikit-react/dist/index.css";
-import "./SendBirdWrapper.css";
+import "./SendBirdWrapperWithProvidersNew.css";
 import React, { useState, useEffect } from "react";
 import SendbirdProvider from "@sendbird/uikit-react/SendbirdProvider";
 import GroupChannelList from "@sendbird/uikit-react/GroupChannelList";
@@ -47,21 +47,12 @@ const createUserIfNotExists = async (userId, nickname) => {
 };
 
 const ChatApp = () => {
-  const colorSet = {
-    '--sendbird-light-primary-500': '#066858',
-    '--sendbird-light-primary-400': '#027d69',
-    '--sendbird-light-primary-300': '#259c72',
-    '--sendbird-light-primary-200': '#69c085',
-    '--sendbird-light-primary-100': '#a8e2ab',
-  };
   const [userData, setUserData] = useState(null);
   const [selectedChannelUrl, setSelectedChannelUrl] = useState(null);
 
   useEffect(() => {
-    // const usrId = "sendbird_desk_agent_id_b38963f0-0239-4e67-a663-ea36a407704e";
-    // const usrNickName = "Danilo Andrade";
-    const usrId = localStorage.getItem('chat-usr-id');
-    const usrNickName = localStorage.getItem('chat-usr-name');
+    const usrId = "sendbird_desk_agent_id_b38963f0-0239-4e67-a663-ea36a407704e";
+    const usrNickName = "Danilo Andrade";
 
     const fetchUser = async () => {
       const user = await createUserIfNotExists(usrId, usrNickName);
@@ -78,7 +69,7 @@ const ChatApp = () => {
   }
 
   return (
-    <SendbirdProvider appId={appId} userId={userData.user_id} accessToken={userData.access_token} colorSet={colorSet}>
+    <SendbirdProvider appId={appId} userId={userData.user_id} accessToken={userData.access_token}>
       <div style={{ width: "100vw", height: "100vh", display: "flex" }}>
         <div style={{ width: "30%", borderRight: "1px solid #ccc" }}>
           <GroupChannelList
