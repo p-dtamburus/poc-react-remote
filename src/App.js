@@ -7,6 +7,10 @@ import ThemeApp from "./components/ThemeApp";
 import { Timer } from "./components/Timer";
 import UseEffectExample from "./components/UseEffect";
 import WebComponent from "./WebComponent";
+import SendBirdWrapperWithProviders from "./components/SendBirdWrapperWithProviders";
+import SendBirdWrapperWithProvidersNew from "./components/SendBirdWrapperWithProvidersNew";
+
+
 
 function App() {
   return (
@@ -18,7 +22,7 @@ function App() {
       {/* <ThemeApp/> */}
       
       <SendBirdWrapper/>
-      {/* <SendBirdWrapperv2/> */}
+      {/* <SendBirdWrapperWithProvidersNew/> */}
     </>
   );
 }
